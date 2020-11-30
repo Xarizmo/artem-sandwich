@@ -1,23 +1,35 @@
-import React, { useState } from 'react';
-import { SandwichPreview } from './SandwichPreview';
-import { SandwichForm } from './SandwichForm';
+import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
+import { SandwichBuilderPage } from './SandwichBuilderPage';
+import { SandwichPreviewPage } from './SandwichPreviewPage';
+import { CheckoutPage } from './CheckoutPage';
+import { NotFoundPage } from './NotFoundPage';
 
 function App() {
-  const [sandwich, setSandwich] = useState();
-  
-  if (sandwich) {
-    return (
-      <>
-        <h1>Ваш сэндвич</h1>
-        <SandwichPreview sandwich={sandwich} />
-      </>
-    )
-  }
-  
   return (
     <>
-      <h1>Артём Сендвич</h1>
-      <SandwichForm onSandwichCreated={setSandwich} />
+      <nav>
+        <ul>
+          <li><Link to="/">Главная</Link></li>
+          <li><Link to="/sandwich-preview">Превью бутерброда</Link></li>
+          <li><Link to="/checkout">Оплата бутерброда</Link></li>
+        </ul>
+      </nav>
+      
+      <Switch>
+        <Route path="/sandwich-preview">
+          <SandwichPreviewPage />
+        </Route>
+        <Route path="/checkout">
+          <CheckoutPage />
+        </Route>
+        <Route exact path="/">
+          <SandwichBuilderPage />
+        </Route>
+        <Route>
+          <NotFoundPage />
+        </Route>
+      </Switch>
     </>
   )
 }

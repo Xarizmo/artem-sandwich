@@ -1,5 +1,5 @@
 import React from 'react';
-import { BREAD, SAUCES, TOPPINGS } from './sandwichData';
+import { BREAD, SAUCES, TOPPINGS } from '../utils/sandwichData';
 
 export const SandwichPreview = ({ sandwich }) => {
   return (

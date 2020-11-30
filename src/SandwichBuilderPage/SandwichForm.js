@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { calculatePrice } from './calculatePrice';
-import { useCollection } from './useCollection';
+import { calculatePrice } from '../utils/calculatePrice';
+import { useCollection } from '../utils/useCollection';
 
 export function SandwichForm({ onSandwichCreated }) {
   const [bread, setBread] = useState("dark");
