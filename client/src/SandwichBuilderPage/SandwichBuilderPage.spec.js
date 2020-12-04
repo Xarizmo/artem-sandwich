@@ -2,7 +2,6 @@ import React from 'react';
 import { SandwichBuilderPage } from './SandwichBuilderPage';
 import { Router, MemoryRouter } from 'react-router-dom';
 import { render, fireEvent } from '@testing-library/react';
-import { SandwichForm } from './SandwichForm';
 import { createMemoryHistory } from 'history';
 
 jest.mock("./SandwichForm", () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { SandwichPreview } from './index';
+import { SandwichPreview } from './SandwichPreview';
 
 describe("SandwichPreview", () => {
   it("renders correctly", () => {
